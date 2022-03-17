@@ -37,8 +37,10 @@ public class Game {
             throw new NotRegisteredException("Player: " + playerName2 + " not registered");
         }
         int compare = player1.compareTo(player2);
-        if (compare > 0) {return 1;}
-        else if (compare < 0) {return 2;}
-        else return 0;
+        if (compare > 0) {
+            return 1;
+        } else if (compare < 0) {
+            return 2;
+        } else return 0;
     }
 }
