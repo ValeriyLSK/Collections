@@ -125,24 +125,14 @@ class GameTest {
     @Test
     void shouldRoundFirstPlayerNotRegistered() {
         game.register(player2);
-        try {
-            game.round("Ivan", "Anton");
-        } catch (NotRegisteredException e) {
-            assertEquals("Player: Ivan not registered",
-                    e.getMessage());
-            return;
-        }
+        assertThrows(NotRegisteredException.class, () -> game.round("Ivan", "Anton"));
+        return;
     }
 
     @Test
     void shouldRoundSecondPlayerNotRegistered() {
         game.register(player1);
-        try {
-            game.round("Ivan", "Anton");
-        } catch (NotRegisteredException e) {
-            assertEquals("Player: Anton not registered",
-                    e.getMessage());
-            return;
-        }
+        assertThrows(NotRegisteredException.class, () -> game.round("Ivan", "Anton"));
+        return;
     }
 }
